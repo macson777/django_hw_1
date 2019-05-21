@@ -4,7 +4,7 @@
 {% block title %} TEST BLOCK {% endblock %}
 
 {% block content %}
-<form action="http://127.0.0.1:8000/cw_19/show_form/" method="POST">
+<form action={% url 'show_form' %} method="POST">
    <p>Name</p> <input type="text" name="name">
    <p>Lastname</p> <input type="text" name="lastname">
     <p>Age</p><input type="text" name="age">
