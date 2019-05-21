@@ -5,11 +5,7 @@
 
 {% block content %}
 <form action={% url 'show_form' %} method="POST">
-   <p>Name</p> <input type="text" name="name">
-   <p>Lastname</p> <input type="text" name="lastname">
-    <p>Age</p><input type="text" name="age">
-    <p>Comment</p><input type="textarea" name="comment">
-    <br>
+    {{ form.as_p }}
     <input type="submit" name="submit">
 </form>
 {% endblock %}

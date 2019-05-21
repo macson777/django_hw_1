@@ -7,7 +7,8 @@ from cw_19.forms import PostForm
 
 def show_form(request):
     if request.method == 'GET':
-        return render(request, 'cw_19_task_1.html')
+        context = {'form': PostForm()}
+        return render(request, 'cw_19_task_1.html', context)
     elif request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
@@ -16,8 +17,9 @@ def show_form(request):
             lastname = data.get('lastname')
             age = data.get('age')
             comment = data.get('comment')
-            print(f'{firstname}|{lastname}|{age}|{comment}')
-            return render(request, 'cw_19_task_1.html')
+            print(f'{firstname} {lastname} {age} {comment}')
+            context = {'form': PostForm()}
+            return render(request, 'cw_19_task_1.html', context)
         else:
             errors = form.errors
             return HttpResponse(f'{errors}')
