@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %} TEST BLOCK {% endblock %}
+
+{% block content %}
+<form action={% url 'show_form 1' %} method="POST">
+    {{ form.as_p }}
+    <input type="submit" name="submit">
+</form>
+{% endblock %}

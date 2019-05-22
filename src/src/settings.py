@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django_task2',
     'cw_19',
     'hw_18_1',
+    'hw_19',
 ]
 
 MIDDLEWARE = [
@@ -61,7 +62,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             'templates',
-                 'cw_19.templates',
+            'cw_19.templates',
+            'hw_19.templates',
                  ],
         'APP_DIRS': True,
         'OPTIONS': {
