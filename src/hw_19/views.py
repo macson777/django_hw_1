@@ -12,19 +12,15 @@ def show_form(request):
     elif request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
-            data = form.data
-            name = data.get('name')
-            from_ = data.get('from')
-            to_ = data.get('to')
-            date = data.get('date')
-            number_of_flights = data.get('number of flights')
+            data = form.cleaned_data
+            number_of_flights = data.get('number_of_flights')
             if number_of_flights != 1:
-                price = 100 * 2
+                price = number_of_flights * 100 * 2
             else:
                 price = 100
-            template = loader.get_template('display_flight.html')
+            context = {'price': price, 'data': data}
 
-            return HttpResponse(template.render({'price': price}, request))
+            return render(request, 'display_flight.html', context)
         else:
             errors = form.errors
             return HttpResponse(f'{errors}')

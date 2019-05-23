@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'cw_19',
     'hw_18_1',
     'hw_19',
+    'cw_20',
+    'django_extensions'
 ]
 
 MIDDLEWARE = [
@@ -64,6 +66,7 @@ TEMPLATES = [
             'templates',
             'cw_19.templates',
             'hw_19.templates',
+            'cw_20.templates',
                  ],
         'APP_DIRS': True,
         'OPTIONS': {
