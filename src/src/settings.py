@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'hw_18_1',
     'hw_19',
     'cw_20',
+    'hw_20',
     'django_extensions'
 ]
 
@@ -67,6 +68,7 @@ TEMPLATES = [
             'cw_19.templates',
             'hw_19.templates',
             'cw_20.templates',
+            'hw_20.templates',
                  ],
         'APP_DIRS': True,
         'OPTIONS': {

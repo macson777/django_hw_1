@@ -1,0 +1,43 @@
+
+{% extends 'base.html' %}
+
+{% block title %}home{% endblock %}
+
+{% block content %}
+{#{% for car in cars %}#}
+{#    <p> align="center">HOME PAGE</p>#}
+{#    <p>#}
+{#    {{ car.brand }}|{{ car.model }}|{{ car.color }}|{{ car.weight }}|{{ car.full_name_owner }}|{{ car.year_of_issue }}#}
+{#        <a href="{% url 'edit_car' car.id %}">EDIT</a>#}
+{#        <a href="{% url 'remove_car' car.id %}">REMOVE</a>#}
+{#    </p>#}
+{#{% endfor %}#}
+{#    <p><a href="{% url 'add_car_form' %}">CREATE NEW CAR</a></p>#}
+
+    <table align="center" border="2">
+        <tr>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Color</th>
+            <th>Weight</th>
+            <th>Full Name Owner</th>
+            <th>Year of Issue</th>
+        </tr>
+        {% for car in cars %}
+            <tr>
+                <td>{{ car.brand }}</td>
+                <td>{{ car.model }}</td>
+                <td>{{ car.color }}</td>
+                <td>{{ car.weight }}</td>
+                <td>{{ car.full_name_owner }}</td>
+                <td>{{ car.year_of_issue }}</td>
+                <td>
+                    <a href="{% url 'edit_car' car.id %}">Edit</a>
+                    <a href="{% url 'remove_car' car.id %}">Remove</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <p align="center"><a href="{% url 'add_car_form' %}">Add new</a></p>
+ {% endblock %}
